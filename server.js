@@ -17,10 +17,12 @@ function dateLogger(req, res, next){
   next();
 }
 
+// custom middleware to log visits
 function logVisit(req, res, next){
   console.log(
     `${req.method} to ${req.url} from ${req.get('Origin')}`
   )
+  next();
 }
 
 // Global Middleware
